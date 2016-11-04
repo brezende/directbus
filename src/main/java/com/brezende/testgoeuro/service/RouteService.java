@@ -82,6 +82,7 @@ public class RouteService {
 			min = max;
 			max = aux;
 		}
-		return directRoutes.get(min).contains(max);
+		Set<Integer> connectedRoutes = directRoutes.get(min);
+		return connectedRoutes != null && connectedRoutes.contains(max);
 	}
 }

@@ -7,7 +7,7 @@ import static java.io.File.*
 
 class RouteServiceSpec extends Specification {
 
-	def "Error creating an account - unexpected param"() {
+	def "Should return true if both stations exist within the same line, false otherwise"() {
 		given:
 		def dataFile = createTempFile("challenge", ".data")
 		dataFile.deleteOnExit()
@@ -30,5 +30,7 @@ class RouteServiceSpec extends Specification {
 		8         | 8       | false
 		6         | 3       | true
 		4         | 6       | true
+		8         | 9       | false
+		3         | 9       | false
 	}
 }
